@@ -11,9 +11,6 @@ export default function ChooseCardinalPoint({ navigation }: RootTabScreenProps<'
   const [textN , setTextN] = React.useState<string|null>(null)
   React.useEffect(() => {
     let watcher: Location.LocationSubscription | undefined;
-    Location.requestBackgroundPermissionsAsync().then(() => {
-
-    })
     const watch = Location.watchHeadingAsync((location) => {
       console.log("here")
       setHeading(location)
@@ -46,9 +43,6 @@ export default function ChooseCardinalPoint({ navigation }: RootTabScreenProps<'
       <Text style={styles.title}>Cardinal</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <Text style={styles.title}>{textN}</Text>
-      <Text style={styles.title}>{JSON.stringify(heading)}</Text>
-
-      
     </View>
   );
 }

@@ -9,7 +9,7 @@ import { RootTabScreenProps } from '../types';
 export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tabas One</Text>
+      <Text style={styles.title}>INTI LIGHT</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <Button onPress={() => {
         console.log("d");
@@ -17,7 +17,14 @@ export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
         navigation.push('Root', {
           screen: "SelectHouseUbication"
         })
-      }}>
+      }}
+        style={{
+          backgroundColor: 'blue',
+        }}
+        styleText={{
+          color: 'white'
+        }}
+      >
         Select your house location
       </Button>
     </View>
