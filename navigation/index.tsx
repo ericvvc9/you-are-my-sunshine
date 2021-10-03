@@ -7,13 +7,19 @@ import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { ColorSchemeName, Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import ChooseCardinalPoint from '../screens/ChooseCardinalPoint';
+import EnterKWS from '../screens/EnterKWS';
+import Home from '../screens/Home';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
+import SelectHouseUbication from '../screens/SelectHouseUbication';
+import SelectRoofType from '../screens/SelectRoofType';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
@@ -35,10 +41,11 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
+      <Stack.Screen name="Root" component={MyStack} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
@@ -47,6 +54,20 @@ function RootNavigator() {
   );
 }
 
+const StackNavigator = createStackNavigator();
+
+function MyStack() {
+  return (
+    <StackNavigator.Navigator>
+      <StackNavigator.Screen name="Home" component={Home} />
+      <StackNavigator.Screen name="SelectHouseUbication" component={SelectHouseUbication} />
+      <StackNavigator.Screen name="EnterKWS" component={EnterKWS} />
+      <StackNavigator.Screen name="SelectRoofType" component={SelectRoofType} />
+      <StackNavigator.Screen name="ChooseCardinalPoint" component={ChooseCardinalPoint} />
+      
+    </StackNavigator.Navigator>
+  );
+}
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
  * https://reactnavigation.org/docs/bottom-tab-navigator
