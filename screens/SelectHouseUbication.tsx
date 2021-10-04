@@ -86,8 +86,9 @@ export default function SelectHouseUbication({ navigation }: RootTabScreenProps<
         <Button 
           style={
             {
-              backgroundColor: 'blue',
-              paddingVertical: 12,
+              backgroundColor: '#397cf5',
+              borderRadius: 5,
+              paddingVertical: 15,
             }
           }
 
@@ -113,7 +114,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'red'
   },
   title: {
     fontSize: 20,

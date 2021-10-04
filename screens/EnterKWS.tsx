@@ -24,8 +24,9 @@ export default function EnterKWS({ navigation }: RootTabScreenProps<'Home'>) {
         <Button
           style={
             {
-              backgroundColor: 'blue',
-              paddingVertical: 12,
+              backgroundColor: '#397cf5',
+              borderRadius: 5,
+              paddingVertical: 15,
             }
           }
           styleText={{

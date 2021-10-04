@@ -19,10 +19,14 @@ export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
         })
       }}
         style={{
-          backgroundColor: 'blue',
+          backgroundColor: '#397cf5',
+          width: '100%',
+          borderRadius: 5,
+          paddingVertical: 15,
         }}
         styleText={{
-          color: 'white'
+          color: 'white',
+          textAlign:'center'
         }}
       >
         Select your house location

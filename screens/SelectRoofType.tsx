@@ -77,8 +77,9 @@ export default function SelectRoofType({ navigation }: RootTabScreenProps<'Selec
       <Button
         style={
           {
-            backgroundColor: 'blue',
+            backgroundColor: '#397cf5',
             paddingVertical: 12,
+            borderRadius: 5,
             minWidth: '100%',
           }
         }
